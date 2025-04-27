@@ -74,7 +74,7 @@ const Contact = () => {
                   </div>
                   <div className="ml-4">
                     <p className="font-medium text-gray-900">Location</p>
-                    <p className="mt-1 text-gray-600">123 Clean Street, Laundry City, LC 12345</p>
+                    <p className="mt-1 text-gray-600">Cebu City, Philippines</p>
                   </div>
                 </div>
                 
