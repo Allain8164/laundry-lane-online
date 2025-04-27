@@ -1,8 +1,17 @@
-
 import { Button } from "@/components/ui/button";
 import { WashingMachine } from "lucide-react";
 
 const Hero = () => {
+  const handleBookNow = () => {
+    const contactSection = document.getElementById('contact');
+    contactSection?.scrollIntoView({ behavior: 'smooth' });
+  };
+
+  const handleSeePricing = () => {
+    const pricingSection = document.getElementById('pricing');
+    pricingSection?.scrollIntoView({ behavior: 'smooth' });
+  };
+
   return (
     <div className="relative bg-gradient-to-b from-laundry-50 to-white pt-12 pb-20 sm:pt-16 lg:pt-20 xl:pt-24">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
@@ -16,10 +25,17 @@ const Hero = () => {
               Professional laundry and dry cleaning services with free pickup and delivery right to your doorstep. Save time and enjoy freshly cleaned clothes without the hassle.
             </p>
             <div className="mt-10 flex flex-wrap gap-4 justify-center lg:justify-start">
-              <Button className="bg-laundry-600 hover:bg-laundry-700 text-white px-8 py-3 text-base rounded-md button-hover">
+              <Button 
+                onClick={handleBookNow}
+                className="bg-laundry-600 hover:bg-laundry-700 text-white px-8 py-3 text-base rounded-md button-hover"
+              >
                 Book Now
               </Button>
-              <Button variant="outline" className="border-laundry-600 text-laundry-700 hover:bg-laundry-50 px-8 py-3 text-base rounded-md button-hover">
+              <Button 
+                onClick={handleSeePricing}
+                variant="outline" 
+                className="border-laundry-600 text-laundry-700 hover:bg-laundry-50 px-8 py-3 text-base rounded-md button-hover"
+              >
                 See Pricing
               </Button>
             </div>

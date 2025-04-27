@@ -1,7 +1,19 @@
-
 import { Button } from "@/components/ui/button";
+import { useToast } from "@/hooks/use-toast";
 
 const Pricing = () => {
+  const { toast } = useToast();
+  
+  const handleChoosePlan = (planName: string) => {
+    const contactSection = document.getElementById('contact');
+    contactSection?.scrollIntoView({ behavior: 'smooth' });
+    
+    toast({
+      title: "Plan Selected",
+      description: `You've selected the ${planName} plan. Please fill out the contact form below to proceed.`,
+    });
+  };
+
   const pricingPlans = [
     {
       name: "Basic",
@@ -95,6 +107,7 @@ const Pricing = () => {
               </ul>
               
               <Button 
+                onClick={() => handleChoosePlan(plan.name)}
                 className={`mt-8 ${
                   plan.popular 
                     ? 'bg-laundry-600 hover:bg-laundry-700 text-white' 

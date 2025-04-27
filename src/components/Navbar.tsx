@@ -1,4 +1,3 @@
-
 import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Menu, X } from "lucide-react";
@@ -8,6 +7,14 @@ const Navbar = () => {
 
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen);
+  };
+
+  const handleBookNow = () => {
+    const contactSection = document.getElementById('contact');
+    contactSection?.scrollIntoView({ behavior: 'smooth' });
+    if (isMenuOpen) {
+      setIsMenuOpen(false);
+    }
   };
 
   return (
@@ -34,7 +41,9 @@ const Navbar = () => {
             <a className="text-gray-700 hover:text-laundry-600 px-3 py-2 rounded-md text-sm font-medium" href="#contact">
               Contact
             </a>
-            <Button className="ml-4 bg-laundry-600 hover:bg-laundry-700">Book Now</Button>
+            <Button onClick={handleBookNow} className="ml-4 bg-laundry-600 hover:bg-laundry-700">
+              Book Now
+            </Button>
           </div>
           
           {/* Mobile Navigation Button */}
@@ -66,7 +75,9 @@ const Navbar = () => {
               Contact
             </a>
             <div className="pt-2 pb-3">
-              <Button className="w-full bg-laundry-600 hover:bg-laundry-700">Book Now</Button>
+              <Button onClick={handleBookNow} className="w-full bg-laundry-600 hover:bg-laundry-700">
+                Book Now
+              </Button>
             </div>
           </div>
         </div>
