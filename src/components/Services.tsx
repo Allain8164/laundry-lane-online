@@ -1,6 +1,5 @@
-
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
-import { WashingMachine, Clothes, Shirt } from "lucide-react";
+import { WashingMachine, Shirt, Iron } from "lucide-react";
 
 const Services = () => {
   const services = [
@@ -12,12 +11,12 @@ const Services = () => {
     {
       title: "Dry Cleaning",
       description: "Professional dry cleaning for your delicate items, suits, dresses, and other garments that require special care.",
-      icon: <Clothes size={48} className="text-laundry-600" />,
+      icon: <Shirt size={48} className="text-laundry-600" />,
     },
     {
       title: "Ironing & Pressing",
       description: "Get your clothes perfectly pressed and ready to wear with our professional ironing and pressing service.",
-      icon: <Shirt size={48} className="text-laundry-600" />,
+      icon: <Iron size={48} className="text-laundry-600" />,
     },
   ];
 
